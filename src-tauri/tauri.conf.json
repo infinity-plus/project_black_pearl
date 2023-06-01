@@ -25,7 +25,9 @@
 				"removeFile": true,
 				"renameFile": false,
 				"copyFile": false,
-				"scope": ["$APPLOCALDATA/**/*"]
+				"scope": [
+					"$APPLOCALDATA/**/*"
+				]
 			},
 			"path": {
 				"all": true
@@ -39,7 +41,10 @@
 			"protocol": {
 				"all": false,
 				"asset": true,
-				"assetScope": ["$APPLOCALDATA/**/*", "/**/*"]
+				"assetScope": [
+					"$APPLOCALDATA/**/*",
+					"/**/*"
+				]
 			}
 		},
 		"systemTray": {
@@ -80,7 +85,12 @@
 			}
 		},
 		"updater": {
-			"active": false
+			"active": true,
+			"endpoints": [
+				"https://github.com/ProjectBlackPearl/pbp_updater_test/raw/main/updater.json"
+			],
+			"dialog": true,
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhBRjJBN0VEQjczMkZERDQKUldUVS9USzM3YWZ5aXVWOVBWREljeTBrN2VuMW1tVThvOUg0VVJ0cW9NdGZnWGpZajl0ZWFYcDEK"
 		},
 		"windows": [
 			{

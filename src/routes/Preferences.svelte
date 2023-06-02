@@ -10,7 +10,7 @@
     } from '../scripts/Preferences.js';
     import languageNames from '../locale/languages.json';
     import { getPlugins } from '../scripts/Browse.js';
-    import pkgJSON from '../../package.json';
+    import pkgJSON from '../../src-tauri/tauri.conf.json';
     import {
         Cube,
         TrashBin,
@@ -137,6 +137,8 @@
                 {/await}
             </ul>
         </div>
-        <span class="ver"> Project Black Pearl v{pkgJSON.version} </span>
+        <span class="ver">
+            {pkgJSON.package.productName} v{pkgJSON.package.version}
+        </span>
     </div>
 </main>

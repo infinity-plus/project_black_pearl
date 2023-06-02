@@ -20,15 +20,27 @@ mod paths;
 mod plugins;
 mod startup;
 
+#[tauri::command]
+fn version(app: tauri::AppHandle) -> String {
+    app.package_info().version.to_string()
+}
+
+#[tauri::command]
+fn name(app: tauri::AppHandle) -> String {
+    app.package_info().name.to_string()
+}
+
 fn main() {
     // Create the usual directories if they don't exist.
     startup::init();
 
     // This object is the initial tauri window
     // Tauri commands that can be called from the frontend are to be invoked below
-    tauri::Builder::default()
+    let app = tauri::Builder::default()
         // Invoke your commands here
         .invoke_handler(tauri::generate_handler![
+            version,
+            name,
             commands::file_dialog,
             commands::image_dialog,
             commands::run_game,
@@ -46,6 +58,7 @@ fn main() {
             plugins::search,
         ])
         .build(tauri::generate_context!())
-        .expect("error while running tauri application")
-        .run(|_app, _event| {});
+        .expect("error while running tauri application");
+
+    app.run(|_app, _event| {});
 }

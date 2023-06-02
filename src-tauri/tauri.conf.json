@@ -8,7 +8,7 @@
 	},
 	"package": {
 		"productName": "Project Black Pearl",
-		"version": "0.3.0"
+		"version": "0.3.2"
 	},
 	"tauri": {
 		"macOSPrivateApi": true,
@@ -97,7 +97,7 @@
 				"fullscreen": false,
 				"height": 720,
 				"resizable": true,
-				"title": "Project Black Pearl | version 0.3.0",
+				"title": "Project Black Pearl",
 				"width": 1280
 			}
 		]
